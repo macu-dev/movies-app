@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import router from './router'
 import { RouterProvider } from "react-router-dom";
 
-import Home from './pages/Home';
-import Layout from './shared/Layout';
+import router from './router'
+
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
