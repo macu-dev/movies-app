@@ -16,8 +16,9 @@ const HeaderContainer  = styled.header`
                 height: 40px;
             }
 
-            p{
+            h1{
                 padding-left: 10px;
+                font-size: 18px;
             }
         }
     }

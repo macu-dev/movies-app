@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         overflow-x: hidden;
         background-color: ${colors.primary};
+        font-family: ${fonts.primary};
 
         &:focus-visible {
             outline: none; 

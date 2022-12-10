@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '@/components/Container'
 
-const Footer: React.FunctionComponent = () => {
+const Footer = () => {
     return (
         <footer>
             <Container>

@@ -12,7 +12,7 @@ const errorCheck = (error: any): error is ErrorResponse => {
   return "data" in error && "status" in error && "statusText" in error;
 };
 
-const NotFound:React.FunctionComponent = () => {
+const NotFound = () => {
     const error: any = useRouteError();
     console.log(error);
 

@@ -7,8 +7,7 @@ const Theme: DefaultTheme = {
         terciary:"#FEA55F"
     },
     fonts:{
-        primary: "'Fira Code', monospace",
-        secondary: "'Fira Code', monospace"
+        primary: "'Raleway', sans-serif;",
     }
 }
 

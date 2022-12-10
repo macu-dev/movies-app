@@ -2,8 +2,7 @@ import 'styled-components';
 
 
 interface Fonts {
-    primary: string,
-    secondary: string
+    primary: string
 }
 
 interface Colors {

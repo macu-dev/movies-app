@@ -7,7 +7,7 @@ import HeaderContainer from './style';
 import LOGO from '@/assets/images/common/logo.svg'
 
 
-const Header: React.FunctionComponent = () => {
+const Header = () => {
     return (
         <HeaderContainer>
             <Container className="header-container">
@@ -15,7 +15,7 @@ const Header: React.FunctionComponent = () => {
                     <picture>
                         <img src={LOGO} alt="logo" />
                     </picture>
-                    <p>Movies app</p>
+                    <h1>The Film Club</h1>
                 </Link>
             </Container>
         </HeaderContainer>
