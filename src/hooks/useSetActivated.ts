@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 
-const useSetActivate = (initialState: boolean | number | string) => {
+const useSetActivate = <T>(initialState: T) : [T, React.Dispatch<SetStateAction<T>>] => {
   const [ active, setActive ] = useState(initialState);
-  return { active, setActive }
+  return [active, setActive ]
 };
 
 

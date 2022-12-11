@@ -10,7 +10,7 @@ export const CardSubtitle = ({ subtitle }: { subtitle?: string }) => {
 
     return (
         <h3>
-            { subtitle ? subtitle : cardContext?.item?.subtitle }
+            { subtitle ? subtitle : cardContext?.item?.media_type }
         </h3>
     );
 }

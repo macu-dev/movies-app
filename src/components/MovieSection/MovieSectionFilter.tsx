@@ -1,26 +1,27 @@
 import { v4 as uuidv4 } from 'uuid';
-import React, { useContext } from 'react';
+import React, { SetStateAction, useContext } from 'react';
 
 import { MovieSectionCtx } from "@/context/MovieSection";
-import useSetActivate from '@/hooks/useSetActivated';
 import { Button, FilterContainer } from './styled';
 
 
-export const MovieSectionFilter = () => {
+export const MovieSectionFilter = (
+      {selected, setter}
+    : {selected:number, setter: React.Dispatch<SetStateAction<number>>}
+   ) => {
 
-    const {active, setActive} = useSetActivate(0);
 
     const MovieSectionContext = useContext( MovieSectionCtx );
 
     const handleClick = (index: number): void => {
-        setActive(index);
+        setter(index);
     };
 
     return (
         <FilterContainer>
             {
                 MovieSectionContext?.item?.categories?.map((category:string, index: number)=>(
-                    <Button className={active === index ? 'active' : ''} key={uuidv4()} onClick={() => {handleClick(index)}}>
+                    <Button className={selected === index ? 'active' : ''} key={uuidv4()} onClick={() => {handleClick(index)}}>
                         {category}
                     </Button>
                 ))

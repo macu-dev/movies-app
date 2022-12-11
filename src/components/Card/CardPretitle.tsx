@@ -9,7 +9,7 @@ export const CardPretitle = ({ pretitle }: { pretitle?: string }) => {
 
     return (
         <p>
-            { pretitle ? pretitle : cardContext?.item?.pretitle }
+            { pretitle ? pretitle : cardContext?.item?.genre_ids }
         </p>
     );
 }

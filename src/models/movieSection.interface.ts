@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, SetStateAction } from 'react';
 import { Settings } from 'react-slick';
 
 
@@ -23,13 +23,16 @@ export interface Movie {
     video?: boolean;
     vote_average?: number;
     vote_count?: number;
+    pretitle?: string;
+    subtitle?: string;
+    img?: string;
+    description?: string;
 }
 
 
 export interface MovieSection {
     title?: string;
     categories?: string[]; // all, movies, tvshow
-    selected? : number;
     movies?:  Movie[];
 
 }
@@ -42,7 +45,7 @@ export interface MovieSectionContextProps {
 export interface MovieSectionHOCProps {
     ({ children, item }: SectionProps ):JSX.Element,
     Title: ({ title }: { title?: string }) => JSX.Element,
-    Carousel: ({ settings }: { settings?: Settings }) => JSX.Element,
-    Filter: () => JSX.Element
+    Carousel: ({ settings, selected }: { settings?: Settings, selected: number }) => JSX.Element,
+    Filter: ({selected, setter}:{selected:number, setter:React.Dispatch<SetStateAction<number>>}) => JSX.Element
 
 }

@@ -9,22 +9,35 @@ import Carousel from '../Carousel';
 import Card from '../Card';
 
 
-export const MovieSectionCarousel = ({settings}: { settings?:Settings }) => {
+export const MovieSectionCarousel = ({settings, selected}: { settings?:Settings, selected: number }) => {
 
     const MovieSectionContext = useContext( MovieSectionCtx );
 
+    const mediaTypes = MovieSectionContext?.item?.categories;
+ 
+    const selectedMediaType = typeof mediaTypes != 'undefined' ? mediaTypes[selected] : 'all';
+
+    const filter = (movie:Movie) => movie.media_type ===  selectedMediaType || selectedMediaType === 'all';
+
+    const moviesFiltered = MovieSectionContext?.item?.movies?.filter(filter);
+
+    const isMovies = moviesFiltered?.length ? moviesFiltered.length > 0 : false;
+
+
     return (
-        <Carousel carouselSettings={settings}>
+        isMovies 
+          ? <Carousel carouselSettings={settings}>
             {
-                MovieSectionContext?.item?.movies?.map(({title, media_type, poster_path, id }:Movie)=>(
-                    <Card key={uuidv4()} item={{title, subtitle: media_type, img: poster_path, id }}>
-                        <Card.Image />
-                        <Card.Title />
-                        <Card.Subtitle />
-                        <Card.Footer />
-                    </Card>
+                moviesFiltered?.map((movie:Movie) => (
+                  <Card key={uuidv4()} item={movie}>
+                      <Card.Image />
+                      <Card.Title />
+                      <Card.Subtitle />
+                      <Card.Footer />
+                  </Card>
                 ))
             }
-        </Carousel>
+          </Carousel>
+          : <p>Oops parece que aqui no hay nada =p</p>
     );
 }

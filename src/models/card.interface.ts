@@ -1,23 +1,25 @@
 import { ReactElement } from 'react';
+import { Movie } from './movieSection.interface';
 
 
 export interface CardProps {
-    item?: Card | null | undefined;
+    item:  Movie ;
     children?: ReactElement | ReactElement[];
     id?: number 
 }
 
-export interface Card {
-    title?: string;
-    id?: number;
-    pretitle?: string;
-    subtitle?:string;
-    img?: string;
-    description?: string
-}
+export interface Card extends Movie {};
+// export interface Card {
+//     title?: string;
+//     id?: number;
+//     pretitle?: string;
+//     subtitle?:string;
+//     img?: string;
+//     description?: string
+// }
 
 export interface CardContextProps {
-    item: Card | null | undefined;
+    item: Movie ;
 }
 
 

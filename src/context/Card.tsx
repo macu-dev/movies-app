@@ -5,7 +5,7 @@ import { CardContainer } from '@/components/Card/styled';
 import { Link } from 'react-router-dom';
 
 
-export const CardCtx = createContext<CardContextProps | null>(null);
+export const CardCtx = createContext<CardContextProps>({item:{}});
 
 
 export const Card = ({ children, item, id }: CardProps) => {

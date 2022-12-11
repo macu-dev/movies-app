@@ -10,6 +10,7 @@ export const MovieSectionCtx = createContext<MovieSectionContextProps | null>(nu
 
 
 export const MovieSection = ({ children, item }: SectionProps) => {
+    
     return (
         <MovieSectionCtx.Provider value={{item}}>
             <Section>

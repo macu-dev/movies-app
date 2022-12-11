@@ -12,8 +12,8 @@ export const CardImageMain = ( { img }: { img?: string }) => {
 
     if ( img ) {
         imgToShow = img;
-    } else if ( cardContext?.item?.img ) {
-        imgToShow = cardContext?.item?.img;
+    } else if ( cardContext?.item?.poster_path ) {
+        imgToShow = cardContext?.item?.poster_path;
     } else {
         imgToShow = imageDefault;
     }

@@ -15,7 +15,6 @@ export const MovieSection: MovieSectionHOCProps = Object.assign(    MovieSection
     Title: MovieSectionTitle,
     Carousel: MovieSectionCarousel,
     Filter: MovieSectionFilter
-    
 })
 
 
