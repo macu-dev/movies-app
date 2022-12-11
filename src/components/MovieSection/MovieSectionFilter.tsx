@@ -19,6 +19,7 @@ export const MovieSectionFilter = (
 
     return (
         <FilterContainer>
+            <div className="container">
             {
                 MovieSectionContext?.item?.categories?.map((category:string, index: number)=>(
                     <Button className={selected === index ? 'active' : ''} key={uuidv4()} onClick={() => {handleClick(index)}}>
@@ -26,6 +27,7 @@ export const MovieSectionFilter = (
                     </Button>
                 ))
             }
+            </div>
         </FilterContainer>
     );
 }

@@ -4,11 +4,15 @@ import { useLocalStorage } from 'usehooks-ts';
 import { CardCtx } from "@/context/Card";
 import HeartSVG from '@/components/Icons/HeartSVG';
 import { Movie } from '@/models/movieSection.interface';
+import useIdToGenre from '@/hooks/useIdToGenre';
+import { CardFooterContainer, FavoriteButton } from './styled';
+import { isFavourite } from '@/helpers/isFavorite';
 
 
 export const CardFooter = ({ description}: { description?: string}) => {
 
     const cardContext = useContext( CardCtx );
+    
     const [moviesFavorites, setMoviesFavorites] = useLocalStorage<Movie[]>('moviesFavorites', []);
 
     const toogleMovieFavorite = (movie: Movie, event: React.MouseEvent<HTMLElement>) => {
@@ -26,18 +30,24 @@ export const CardFooter = ({ description}: { description?: string}) => {
         
     }
 
+    const idToGenre = useIdToGenre(cardContext?.item?.media_type || "movie");
+
+    const stringCategories  = cardContext?.item?.genre_ids?.map(idToGenre)
+
     return (
 
-        <div>
+        <CardFooterContainer>
             <p>
-                { description ? description : cardContext?.item?.description }
+                {/* { description ? description : stringCategories?.join(', ') } */}
+                { description ? description : stringCategories?.at(0) }
             </p>
 
-            <button 
+            <FavoriteButton 
                 onClick={(event: React.MouseEvent<HTMLElement>) =>{toogleMovieFavorite(cardContext?.item, event)}}
+                className={isFavourite(cardContext?.item, moviesFavorites)? "active":""}
             >
                 <HeartSVG />
-            </button>
-        </div>
+            </FavoriteButton>
+        </CardFooterContainer>
     );
 }

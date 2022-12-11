@@ -27,6 +27,7 @@ export interface Movie {
     subtitle?: string;
     img?: string;
     description?: string;
+    name?: string;
 }
 
 

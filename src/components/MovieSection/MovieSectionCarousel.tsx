@@ -29,15 +29,15 @@ export const MovieSectionCarousel = ({settings, selected}: { settings?:Settings,
           ? <Carousel carouselSettings={settings}>
             {
                 moviesFiltered?.map((movie:Movie) => (
-                  <Card key={uuidv4()} item={movie}>
-                      <Card.Image />
-                      <Card.Title />
-                      <Card.Subtitle />
-                      <Card.Footer />
-                  </Card>
+                    <Card key={uuidv4()} item={movie}>
+                        <Card.Image />
+                        <Card.Title />
+                        <Card.Subtitle />
+                        <Card.Footer />
+                    </Card>
                 ))
             }
           </Carousel>
-          : <p>Oops parece que aqui no hay nada =p</p>
+          : <p>Oops!! parece que aqui no hay nada</p>
     );
 }

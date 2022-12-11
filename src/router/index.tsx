@@ -6,7 +6,6 @@ import Movie from '@/pages/Movie';
 import NotFound from "@/pages/NotFound";
 
 
-
 const router = createBrowserRouter([
     {
         path: "/",

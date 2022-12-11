@@ -1,0 +1,1 @@
+export const isFavourite = <T extends {id?: number}>(value: T, favorites: T[]) => favorites.some((favorite:T) => value?.id === favorite?.id)
