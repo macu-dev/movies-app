@@ -29,9 +29,11 @@ const Home = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 2000,
         slidesToShow: 4,
-        slidesToScroll: 4
+        slidesToScroll: 4,
+        autoplay: true,
+        autoplaySpeed: 2000,
     };
     
     // movies  api
