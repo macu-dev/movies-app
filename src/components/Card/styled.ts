@@ -11,6 +11,17 @@ export const CardContainer = styled.div`
     overflow: hidden;
     background: #fff;
     padding: 20px;
+    height: 377px;
+    display: flex;
+    flex-direction: column;
+    a{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+    }
+   
 
     h2{
         font-size: 16px;
@@ -35,9 +46,9 @@ export const CardContainer = styled.div`
 
 
 export const CardImage = styled.div`
-    padding-bottom: 15px;
     img{
         width: 100%;
+        height: 240px;
         object-fit: cover;
     }
 
