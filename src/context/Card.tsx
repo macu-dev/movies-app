@@ -12,7 +12,7 @@ export const Card = ({ children, item, id }: CardProps) => {
     return (
         <CardCtx.Provider value={{item}}>
             <CardContainer>
-                <Link to={`movies/${id ? id : item?.id}`}>
+                <Link to={`movies/${id ? id : item?.id}?category=${item.media_type}`} preventScrollReset={true}>
                     { children }
                 </Link>
             </CardContainer>

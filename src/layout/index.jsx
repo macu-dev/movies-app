@@ -7,10 +7,12 @@ import { Theme } from '@/styles/theme';
 import  Footer from '@/shared/Footer'
 import Header from '@/shared/Header';
 import Container from '@/components/Container';
+import ScrollToTop from '@/helpers/scrolltop';
 
 const Layout = ()  =>{
     return (
         <ThemeProvider theme={Theme}>
+            <ScrollToTop />
             <GlobalStyle />
             <Header />
             <main>
