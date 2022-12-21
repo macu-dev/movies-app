@@ -26,6 +26,7 @@ export interface GetMovieResponse {
   video:                 boolean;
   vote_average:          number;
   vote_count:            number;
+  original_name:         string;
 }
 
 export interface Genre {
@@ -84,7 +85,7 @@ export interface GetTvResponse {
   original_name:        string;
   overview:             string;
   popularity:           number;
-  poster_path:          string;
+  poster_path:         string;
   production_companies: Network[];
   production_countries: ProductionCountry[];
   seasons:              Season[];
@@ -94,6 +95,7 @@ export interface GetTvResponse {
   type:                 string;
   vote_average:         number;
   vote_count:           number;
+  original_title?:      string;
 }
 
 export interface CreatedBy {

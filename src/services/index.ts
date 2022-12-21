@@ -15,9 +15,10 @@ export const getMovieById = async (movieId: number | string) => {
 
 
 export const getTvById = async (tvId: number | string) => {
-    const { data } = await axios.get<GetTvResponse>(`${process.env.REACT_APP_API_URL}tv/>${tvId}?api_key=${process.env.REACT_APP_API_KEY}`)
+    const { data } = await axios.get<GetTvResponse>(`${process.env.REACT_APP_API_URL}tv/${tvId}?api_key=${process.env.REACT_APP_API_KEY}`)
     return data;
 }
+
 
 
 export const getAllTVGenre = async () => {
@@ -30,3 +31,11 @@ export const getAllMovieGenre = async () => {
     return data;
 }
   
+export const getTvOrMovieId = async (tvMovieId: number | string, isMovie: boolean) => {
+    if(isMovie){
+        return getMovieById(tvMovieId);
+    }else{
+        return getTvById(tvMovieId);
+    }
+    
+}
